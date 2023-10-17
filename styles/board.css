@@ -1,0 +1,29 @@
+.b, .w {
+    height:5vw;
+    width:5vw;
+    font-size: 4vw;
+    text-align: center;
+    display:inline-table;
+}
+.b {
+    background-color: black;
+    color: rgb(156, 156, 156);
+    cursor: url('/src/cursors/cursor_white.png'), pointer;
+}
+.w {
+    background-color: white;
+    cursor: url('/src/cursors/cursor_black.png'), pointer;
+}
+tr, td {
+    margin: 0;
+}
+table {
+    background-color: rgb(136, 136, 136);
+}
+.wb {
+    color: white;
+}
+#h1ek {
+    text-align: center;
+    color: var(--text-secondary);
+}
