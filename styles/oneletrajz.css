@@ -1,0 +1,29 @@
+.doc {
+    color: var(--text-primary);
+}
+.gap {
+    height: 40px;
+}
+.hr {
+    background-color: var(--text-primary);
+}
+.vastag {
+    height: 5px;
+    background-color: var(--text-primary);
+}
+.in {
+    width: 90%;
+    display: inline-block;
+}
+.jobb {
+    text-align: right;
+}
+h1 {
+    font-size: 250%;
+}
+h4, .low {
+    text-transform: uppercase;
+}
+.dwbt {
+    float: right;
+}

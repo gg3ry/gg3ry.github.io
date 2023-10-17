@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #3d3d3d;
+}
+
+.loader-container {
+    width: 75vw;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loader {
+    width: 0;
+    height: 100%;
+    background-color: rgb(252, 214, 0);
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+}
+
+.loader.green {
+    background-color: #00ff08;
+}
+
+html, body {
+    cursor: url("/src/cursors/cursor_white.png"), default;
+    cursor: url("/src/cursors/cursor_white.png"), auto;
+}
