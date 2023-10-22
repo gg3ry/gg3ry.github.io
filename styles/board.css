@@ -19,6 +19,8 @@ tr, td {
 }
 table {
     background-color: rgb(136, 136, 136);
+    margin-right: auto;
+    margin-left: auto;
 }
 .wb {
     color: white;
