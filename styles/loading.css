@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #3d3d3d;
+    background: linear-gradient(to top right, #3d3d3d 0%, #383838 200%);
 }
 .load {
     width: 200px;
