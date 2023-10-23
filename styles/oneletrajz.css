@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+html, body, main {
+    font-family: 'Tilt Neon', sans-serif;
+}
 .doc {
     color: var(--text-primary);
 }
@@ -19,7 +24,9 @@
     text-align: right;
 }
 h1 {
-    font-size: 250%;
+    font-size: 300%;
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--text-secondary);
 }
 h4, .low {
     text-transform: uppercase;
