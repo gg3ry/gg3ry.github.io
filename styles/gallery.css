@@ -1,4 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
 body {
     font-family: Arial, Helvetica, sans-serif;
   }
@@ -42,10 +43,10 @@ body {
   }
   .txt {
     color: var(--text-primary);
+    font-family: 'Josefin Sans', sans-serif;
   }
-  
   .card-back {
-    background-color: var(--bg-primary);
+    background: linear-gradient(to top right, var(--bg-secondary) -60%, var(--bg-third) 100%);
     color: white;
     transform: rotateY(180deg);
     
@@ -63,7 +64,15 @@ body {
 .card-back a {
   cursor: var(--cursor-active), pointer;
   text-decoration: none;
+  font-size: larger;
 }
 .card-back a:active {
-  cursor: var(--cursor-click);
+  cursor: var(--cursor-click), pointer;
+}
+.h {
+  font-size: 2vw;
+  text-shadow: 16px 22px 11px var(--text-secondary);
+  text-align: center;
+  color: var(--text-primary);
+  font-family: 'Cinzel', serif;
 }
