@@ -1,3 +1,3 @@
 setTimeout(() => {
-    window.location.href = "index.html";
+    window.location.href = "html/kezdolap.html";
 }, 4000);
