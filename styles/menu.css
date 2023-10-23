@@ -9,7 +9,7 @@
   --bg-primary: #23232e;
   --bg-secondary: #141418;
   --bg-third: #3d3d3d;
-  --transition-speed: 600ms;
+  --transition-speed: 1000ms;
   --cursor-def: url('/src/cursors/cursor_white.png');
   --cursor-active: url('/src/cursors/cursor_active_white.png');
   --cursor-click: url('/src/cursors/cursor_click_white.png');
@@ -101,8 +101,7 @@ main {
   color: #336f91;
 }
 
-.fa-primary,
-.fa-secondary {
+.fa-primary, .fa-secondary {
   transition: var(--transition-speed);
 }
 
@@ -129,6 +128,7 @@ main {
   position: absolute;
   left: -999px;
   transition: var(--transition-speed);
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #18d1ff, 0 0 30px #18d1ff, 0 0 40px #18d1ff, 0 0 55px #18d1ff, 0 0 75px #18d1ff;
 }
 
 .navbar:hover .logo svg {
