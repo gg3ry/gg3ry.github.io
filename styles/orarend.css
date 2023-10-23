@@ -1,19 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300&display=swap');
 table {
     width: 100%;
     border-collapse: collapse;
+    cursor: var(--cursor-def), default;
+    background: linear-gradient(90deg, var(--text-primary) 0%, var(--bg-primary) 250%);
 }
 th, td {
     border: 4px solid var(--bg-secondary);
     padding: 5px;
     border-collapse: collapse;
+    font-family: 'Mohave', sans-serif;
 }
 th {
     text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+td {
+    font-size: 20px;
+    font-weight: bold;
+}
+.mpt {
+    background-color: var(--bg-third);
+    border: none;
+    border-bottom: 3px var(--bg-third) solid;
 }
 .hidden {
     display: none;
 }
 th, td, table, tr {
-    background-color: var(--text-secondary);
     color: var(--bg-primary);
+}
+main, th, td, table {
+    cursor: var(--cursor-def), default;
+    cursor: var(--cursor-def), auto;
+}
+button {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    background: linear-gradient(to top left, rgba(6, 0, 117) 0%, rgba(0,212,255,1) 100%);
+    color: rgb(255, 255, 255);
+}
+button:active {
+    background: linear-gradient(to top left, rgba(0,212,255,1) 0%, rgba(6,0,117,1) 100%);
 }
