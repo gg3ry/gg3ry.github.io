@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/styles/oneletrajz.css">
         <link href="/styles/menu.css" rel="stylesheet">
         <script defer src="/scripts/bg.js"></script>
+        <script src="/scripts/letter.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -430,7 +431,24 @@ c14 172 -4 321 -48 408 -56 111 -167 149 -281 96z m135 -147 c26 -28 40 -90
       </ul>
   </nav>
   <main>
-    <div class="doc">
+    <button onclick="onoff()" class="letter-image" id="letter">
+      <div class="animated-mail">
+        <div class="back-fold"></div>
+        <div class="letter">
+          <div class="letter-border"></div>
+          <div class="letter-title"></div>
+          <div class="letter-context"></div>
+          <div class="letter-stamp">
+            <div class="letter-stamp-inner"></div>
+          </div>
+        </div>
+        <div class="top-fold"></div>
+        <div class="body"></div>
+        <div class="left-fold"></div>
+      </div>
+      <div class="shadow"></div>
+    </button>
+    <div id="doc">
         <hr class="vastag">
         <p id="footer">&#128197; Braunau am Inn (Ausztria), 1889.04.20 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;☏06303742298 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; szgery67@gmail.com </p>
         <hr class="hr">
@@ -445,7 +463,19 @@ c14 172 -4 321 -48 408 -56 111 -167 149 -281 96z m135 -147 c26 -28 40 -90
         <h4>nyelvismeret <hr class="vastag in"></h4>
         <h2>Angol &emsp; <span class="low">Középfok/kommunikációs szint</span></h2>
         <hr class="hr">
-        <a class="dwbt" href="/src/szucs_gergely.pdf" download><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+        <div class="wrapper">
+          <button onclick="onoff()" class="close-button">
+            <div class="in">
+              <div class="close-button-block"></div>
+              <div class="close-button-block"></div>
+            </div>
+            <div class="out">
+              <div class="close-button-block"></div>
+              <div class="close-button-block"></div>
+            </div>
+          </button>
+        </div>
+        <a class="dwbt" href="/src/szucs_gergely.pdf" download><h1>FREE DOWNLOAD!!!</h1><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="75.000000pt" height="75.000000pt" viewBox="0 0 512.000000 512.000000"
             preserveAspectRatio="xMidYMid meet">
            
@@ -467,6 +497,7 @@ c14 172 -4 321 -48 408 -56 111 -167 149 -281 96z m135 -147 c26 -28 40 -90
            -1 -377 -20z"/>
            </g>
            </svg>
+           
            </a>
     </div>
   </main>
