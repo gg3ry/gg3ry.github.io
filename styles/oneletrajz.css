@@ -3,8 +3,9 @@
 html, body, main {
     font-family: 'Tilt Neon', sans-serif;
 }
-.doc {
+#doc {
     color: var(--text-primary);
+    display: none;
 }
 .gap {
     height: 40px;
@@ -33,4 +34,274 @@ h4, .low {
 }
 .dwbt {
     float: right;
+    display: flex;
+    color: var(--text-secondary);
+    font-family: Helvetica, Arial, Sans-serif;
+    font-size: 1em;
+    transform-origin: 50% 5em;
+    animation: rangas 2s linear infinite;
 }
+.letter-image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 200px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: none;
+}
+.letter-image, .animated-mail, .body, .top-fold, .letter, .back-fold, .letter-border, .letter-title, .letter-context, .shadow {
+    cursor: url('/src/cursors/cursor_active_black.png'), pointer;
+}
+.animated-mail {
+	position: absolute;
+	height: 150px;
+	width: 200px;
+	-webkit-transition: .4s;
+	-moz-transition: .4s;
+	transition: .4s;
+	
+	.body {
+		position: absolute;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 100px 200px;
+		border-color: transparent transparent #008b00 transparent;
+		z-index: 2;
+	}
+	
+	.top-fold {
+		position: absolute;
+		top: 50px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 50px 100px 0 100px;
+		-webkit-transform-origin: 50% 0%;
+		-webkit-transition: transform .4s .4s, z-index .2s .4s;
+		-moz-transform-origin: 50% 0%;
+		-moz-transition: transform .4s .4s, z-index .2s .4s;
+		transform-origin: 50% 0%;
+		transition: transform .4s .4s, z-index .2s .4s;
+		border-color: #09af00 transparent transparent transparent;
+		z-index: 2;
+	}
+	
+	.back-fold {
+		position: absolute;
+		bottom: 0;
+		width: 200px;
+		height: 100px;
+		background: #09af00;
+		z-index: 0;
+	}
+	
+	.left-fold {
+		position: absolute;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 50px 0 50px 100px;
+		border-color: transparent transparent transparent #008b00;
+		z-index: 2;
+	}
+	
+	.letter {
+		left: 20px;
+		bottom: 0px;
+		position: absolute;
+		width: 160px;
+		height: 60px;
+		background: white;
+		z-index: 1;
+		overflow: hidden;
+		-webkit-transition: .4s .2s;
+		-moz-transition: .4s .2s;
+		transition: .4s .2s;
+		
+		.letter-border {
+			height: 10px;
+			width: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        #1c00db,
+        #1c00db 8px,
+        transparent 8px,
+        transparent 18px
+      );
+		}
+		
+		.letter-title {
+			margin-top: 10px;
+			margin-left: 5px;
+			height: 10px;
+			width: 40%;
+			background: #61d800;
+		}
+		.letter-context {
+			margin-top: 10px;
+			margin-left: 5px;
+			height: 10px;
+			width: 20%;
+			background: #61d800;
+		}
+		
+		.letter-stamp {
+			margin-top: 30px;
+			margin-left: 120px;
+			border-radius: 100%;
+			height: 30px;
+			width: 30px;
+			background: #61d800;
+			opacity: 0.3;
+		}
+	}
+}
+
+.shadow {
+	position: absolute;
+	top: 200px;
+	left: 50%;
+	width: 400px;
+	height: 30px;
+	transition: .4s;
+	transform: translateX(-50%);
+	-webkit-transition: .4s;
+	-webkit-transform: translateX(-50%);
+	-moz-transition: .4s;
+	-moz-transform: translateX(-50%);
+	
+	border-radius: 100%;
+	background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+}
+
+.letter-image:hover {
+    .animated-mail {
+        transform: translateY(50px);
+        -webkit-transform: translateY(50px);
+        -moz-transform: translateY(50px);
+    }
+    
+    .animated-mail .top-fold {
+        transition: transform .4s, z-index .2s;
+        transform: rotateX(180deg);
+        -webkit-transition: transform .4s, z-index .2s;
+        -webkit-transform: rotateX(180deg);
+        -moz-transition: transform .4s, z-index .2s;
+        -moz-transform: rotateX(180deg);
+        z-index: 0;
+    }
+    
+    .animated-mail .letter {
+        height: 180px;
+    }
+    
+    .shadow {
+        width: 250px;
+    }
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close-button {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-third);
+    cursor: var(--cursor-active), pointer;
+}
+.close-button-block:hover {
+    cursor: var(--cursor-active), pointer;
+}
+.close-button-block:active {
+    cursor: var(--cursor-click), pointer;
+}
+.close-button > div {
+    position: relative;
+}
+.close-button-block {
+    width: 40px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: red;
+}
+.close-button-block:before, .close-button-block:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: calc(55% - 4px);
+    display: block;
+    width: 4px;
+    height: 25px;
+    transform-origin: bottom center;
+    background: var(--text-secondary);
+    transition: all ease-out 280ms;
+}
+.close-button-block:last-of-type {
+    transform: rotate(180deg);
+}
+.close-button .in .close-button-block:before {
+    transition-delay: 280ms;
+    transform: translateX(20px) translateY(-20px) rotate(45deg);
+}
+.close-button .in .close-button-block:after {
+    transition-delay: 280ms;
+    transform: translateX(-22px) translateY(-22px) rotate(-45deg);
+}
+.close-button .out {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.close-button .out .close-button-block:before {
+    transform: translateX(-5px) translateY(5px) rotate(45deg);
+}
+.close-button .out .close-button-block:after {
+    transform: translateX(5px) translateY(5px) rotate(-45deg);
+}
+.close-button:hover .in .close-button-block:before {
+    transform: translateX(-5px) translateY(5px) rotate(45deg);
+}
+.close-button:hover .in .close-button-block:after {
+    transform: translateX(5px) translateY(5px) rotate(-45deg);
+}
+.close-button:hover .out .close-button-block:before {
+    transform: translateX(-20px) translateY(20px) rotate(45deg);
+}
+.close-button:hover .out .close-button-block:after {
+    transform: translateX(20px) translateY(20px) rotate(-45deg);
+}
+  @keyframes rangas {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
