@@ -224,10 +224,10 @@ h4, .low {
     background-color: var(--bg-third);
     cursor: var(--cursor-active), pointer;
 }
-.close-button-block:hover {
+.close-button-block, .close-button {
     cursor: var(--cursor-active), pointer;
 }
-.close-button-block:active {
+.close-button-block:active, .close-button:active {
     cursor: var(--cursor-click), pointer;
 }
 .close-button > div {
