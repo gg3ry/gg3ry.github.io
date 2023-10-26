@@ -53,8 +53,12 @@ h4, .low {
     background-color: transparent;
     border: none;
 }
-.letter-image, .animated-mail, .body, .top-fold, .letter, .back-fold, .letter-border, .letter-title, .letter-context, .shadow {
-    cursor: url('/src/cursors/cursor_active_black.png'), pointer;
+.letter-image, .animated-mail, .left-fold, .body, .top-fold, .letter, .back-fold, .letter-border, .letter-title, .letter-context, .shadow {
+    cursor: var(--cursor-active), pointer;
+}
+.letter-image:active, .animated-mail:active, .left-fold:active, .body:active, .top-fold:active, .letter:active, .back-fold:active, .letter-border:active, .letter-title:active,
+ .letter-context:active, .shadow:active {
+    cursor: var(--cursor-click), pointer;
 }
 .animated-mail {
 	position: absolute;
@@ -71,7 +75,7 @@ h4, .low {
 		height: 0;
 		border-style: solid;
 		border-width: 0 0 100px 200px;
-		border-color: transparent transparent #008b00 transparent;
+		border-color: transparent transparent #22577a transparent;
 		z-index: 2;
 	}
 	
@@ -88,7 +92,7 @@ h4, .low {
 		-moz-transition: transform .4s .4s, z-index .2s .4s;
 		transform-origin: 50% 0%;
 		transition: transform .4s .4s, z-index .2s .4s;
-		border-color: #09af00 transparent transparent transparent;
+		border-color: #003566 transparent transparent transparent;
 		z-index: 2;
 	}
 	
@@ -97,7 +101,7 @@ h4, .low {
 		bottom: 0;
 		width: 200px;
 		height: 100px;
-		background: #09af00;
+		background: #38a3a5;
 		z-index: 0;
 	}
 	
@@ -108,7 +112,7 @@ h4, .low {
 		height: 0;
 		border-style: solid;
 		border-width: 50px 0 50px 100px;
-		border-color: transparent transparent transparent #008b00;
+		border-color: transparent transparent transparent #22577a;
 		z-index: 2;
 	}
 	
@@ -130,8 +134,8 @@ h4, .low {
 			width: 100%;
       background: repeating-linear-gradient(
         -45deg,
-        #1c00db,
-        #1c00db 8px,
+        #000000,
+        #000000 8px,
         transparent 8px,
         transparent 18px
       );
@@ -142,14 +146,14 @@ h4, .low {
 			margin-left: 5px;
 			height: 10px;
 			width: 40%;
-			background: #61d800;
+			background: #003566;
 		}
 		.letter-context {
 			margin-top: 10px;
 			margin-left: 5px;
 			height: 10px;
 			width: 20%;
-			background: #61d800;
+			background: #003566;
 		}
 		
 		.letter-stamp {
@@ -158,7 +162,7 @@ h4, .low {
 			border-radius: 100%;
 			height: 30px;
 			width: 30px;
-			background: #61d800;
+			background: #f55134;
 			opacity: 0.3;
 		}
 	}
