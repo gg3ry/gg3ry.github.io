@@ -29,6 +29,7 @@
 
 * [HTML](https://www.w3schools.com/html/)
 * [CSS](https://www.w3schools.com/css/default.asp)
+* [JS](https://www.w3schools.com/js/default.asp)
 
 ## Usage
 
