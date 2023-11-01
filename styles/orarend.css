@@ -35,15 +35,48 @@ main, th, td, table {
     cursor: var(--cursor-def), default;
     cursor: var(--cursor-def), auto;
 }
-button {
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
-    height: 30px;
-    font-size: 20px;
-    background: linear-gradient(to top left, rgba(6, 0, 117) 0%, rgba(0,212,255,1) 100%);
-    color: rgb(255, 255, 255);
+.onoff {
+    min-width: 130px;
+    height: 40px;
+    color: var(--text-secondary);
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: var(--cursor-def), default;
+    cursor: var(--cursor-def), auto;
+    transition: all 0.5s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    z-index: 0;
+    background: var(--bg-primary);
+    overflow: hidden;
+    border: 2px solid #57cc99;
+    color: #57cc99;
 }
-button:active {
-    background: linear-gradient(to top left, rgba(0,212,255,1) 0%, rgba(6,0,117,1) 100%);
+.onoff:hover {
+    color: #fff;
+    cursor: var(--cursor-active), pointer;
+}
+.onoff:hover:after {
+width: 100%;
+cursor: var(--cursor-active), pointer;
+}
+    .onoff:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 0.5s ease;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #57cc99;
+    cursor: var(--cursor-def), auto;
+    cursor: var(--cursor-def), default;
+}
+.onoff:active::after {
+    background-color: rgb(0, 255, 255);
+    cursor: var(--cursor-click), pointer;
+    transition: 0s;
 }
