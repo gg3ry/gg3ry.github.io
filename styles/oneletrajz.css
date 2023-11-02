@@ -6,6 +6,11 @@ html, body, main {
 #doc {
     color: var(--text-primary);
     display: none;
+    backdrop-filter: blur(12px) saturate(200%);
+    -webkit-backdrop-filter: blur(12px) saturate(200%);
+    background-color: rgba(255, 174, 0, 0.1);
+    border-radius: 12px;
+    border: 3px solid rgba(255, 255, 255, 0.25);
 }
 .gap {
     height: 40px;
