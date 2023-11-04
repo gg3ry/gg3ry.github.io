@@ -18,7 +18,7 @@ main {
   height: 30rem;
   perspective: 1000px;
   display:inline-flex;
-  margin: 3rem
+  margin: 2rem
 }
 
 .card-inner {
