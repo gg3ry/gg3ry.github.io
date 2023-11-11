@@ -29,7 +29,7 @@ td {
 .mpt:hover {
     background-color: rgba(0, 0, 0, 0);
 }
-.hidden {
+#hidden {
     display: none;
 }
 th, td, table, tr {
