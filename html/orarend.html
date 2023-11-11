@@ -432,10 +432,10 @@ c14 172 -4 321 -48 408 -56 111 -167 149 -281 96z m135 -147 c26 -28 40 -90
   </nav>
 <main>
 
-  <button class="onoff" onclick="toggleSchedule('head'), toggleSchedule('elso'), toggleSchedule('masodik'), toggleSchedule('harmadik'), toggleSchedule('negyedik'), toggleSchedule('otodik'), toggleSchedule('hatodik'), toggleSchedule('hetedik')">
+  <button class="onoff" onclick="megjelenes()">
     Megjelenítés</button>
- <table>
-  <tr class="hidden" id="head">
+ <table id="hidden">
+  <tr>
     <th colspan="2">Óra sorszáma / Óra időpontja</th>
     <th>Hétfő</th>
     <th>Kedd</th>
@@ -443,7 +443,7 @@ c14 172 -4 321 -48 408 -56 111 -167 149 -281 96z m135 -147 c26 -28 40 -90
     <th>Csütörtök</th>
     <th>Péntek</th>
   </tr>
-  <tr id="elso" class="hidden">
+  <tr>
     <th>1.</th>
     <th>7:50 -- 8:35 </th>
     <td> <span class="ora"> Webprogramozás</span>
@@ -457,7 +457,7 @@ c14 172 -4 321 -48 408 -56 111 -167 149 -281 96z m135 -147 c26 -28 40 -90
     <td> <span class="ora"> Matematika</span>
      <span class="terem"> 14-es terem </span> </td>
   </tr>
-  <tr id="masodik" class="hidden">
+  <tr>
     <th>2.</th>
     <th>8:45 -- 9:30</th>
     <td> <span class="ora"> Webprogramozás</span>
@@ -471,7 +471,7 @@ c14 172 -4 321 -48 408 -56 111 -167 149 -281 96z m135 -147 c26 -28 40 -90
     <td> <span class="ora"> Testnevelés</span>
      <span class="terem"> Tornaterem </span> </td>
   </tr>
-  <tr id="harmadik" class="hidden">
+  <tr>
     <th>3.</th>
     <th>9:45 -- 10:30</th>
     <td> <span class="ora"> Webprogramozás</span>
@@ -485,7 +485,7 @@ c14 172 -4 321 -48 408 -56 111 -167 149 -281 96z m135 -147 c26 -28 40 -90
     <td> <span class="ora"> Irodalom</span>
      <span class="terem"> 14 -es terem </span> </td>
   </tr>
-  <tr id="negyedik" class="hidden">
+  <tr>
     <th>4.</th>
     <th>10:40 -- 11:25</th>
     <td> <span class="ora"> Asztali alkalmazás</span>
@@ -499,7 +499,7 @@ c14 172 -4 321 -48 408 -56 111 -167 149 -281 96z m135 -147 c26 -28 40 -90
     <td> <span class="ora"> Történelem más néven</span>
     <span class="terem"> 14 -es terem </span> </td>
   </tr>
-  <tr id="otodik" class="hidden">
+  <tr>
     <th>5.</th>
     <th>11:35 -- 12:20</th>
     <td> <span class="ora"> Asztali alkalmazás</span>
@@ -513,7 +513,7 @@ c14 172 -4 321 -48 408 -56 111 -167 149 -281 96z m135 -147 c26 -28 40 -90
     <td> <span class="ora"> IKT projectmunka II.</span>
      <span class="terem"> T112 -es terem </span> </td>
   </tr>
-  <tr id="hatodik" class="hidden">
+  <tr>
     <th>6.</th>
     <th>12:30 -- 13:15</th>
     <td> <span class="ora">  Asztali alkalmazás</span>
@@ -527,7 +527,7 @@ c14 172 -4 321 -48 408 -56 111 -167 149 -281 96z m135 -147 c26 -28 40 -90
     <td> <span class="ora"> IKT projectmunka II.</span>
      <span class="terem"> T112 -es terem</span> </td>
   </tr>
-  <tr id="hetedik" class="hidden">
+  <tr>
     <th>7.</th>
     <th>13:35 -- 14:15</th>
     <td class="mpt" colspan="2"></td>
