@@ -9,7 +9,7 @@
   --bg-primary: #23232e;
   --bg-secondary: #141418;
   --bg-third: #3d3d3d;
-  --transition-speed: 1000ms;
+  --transition-speed: 1700ms;
   --cursor-def: url('/src/cursors/cursor_white.png');
   --cursor-active: url('/src/cursors/cursor_active_white.png');
   --cursor-click: url('/src/cursors/cursor_click_white.png');
@@ -51,7 +51,8 @@ main {
   background-attachment: fixed;
   background-position-x: 5rem;
   background-repeat: no-repeat;
-  background-size: cover;  
+  background-size: cover; 
+  transition: var(--transition-speed); 
 }
 .navbar {
   position: fixed;
@@ -69,14 +70,17 @@ main {
   flex-direction: column;
   align-items: center;
   height: 100%;
+  transition: var(--transition-speed);
 }
 
 .nav-item {
   width: 100%;
+  transition: var(--transition-speed);
 }
 
 .nav-item:last-child {
   margin-top: auto;
+  transition: var(--transition-speed);
 }
 
 .nav-link {
@@ -93,6 +97,7 @@ main {
   filter: grayscale(0%) opacity(1);
   background: var(--bg-secondary);
   color: var(--text-secondary);
+  transition: var(--transition-speed);
 }
 
 .link-text {
