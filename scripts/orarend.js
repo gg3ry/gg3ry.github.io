@@ -1,8 +1,8 @@
-function toggleSchedule(day) {
-  var schedule = document.getElementById(day);
-  if (schedule.classList.contains('hidden')) {
-    schedule.classList.remove('hidden');
+function megjelenes() {
+  var x = document.getElementById("hidden");
+  if (x.style.display === "none") {
+  x.style.display = "block";
   } else {
-    schedule.classList.add('hidden');
+  x.style.display = "none";
   }
 }
