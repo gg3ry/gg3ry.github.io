@@ -10,6 +10,6 @@ var x = setInterval(function() {
   + minutes + "p " + seconds + "mp ";
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("cd").innerHTML = "EXPIRED";
+    document.getElementById("cd").innerHTML = "LEJÁRT DÁTUM";
   }
 }, 1000);
