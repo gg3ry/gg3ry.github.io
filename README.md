@@ -32,4 +32,4 @@
 * [JS](https://www.w3schools.com/js/default.asp)
 
 ## Author
-** - [GG3ry](https://github.com/GG3ry/) - **
+** - [GG3ry](https://github.com/GG3ry/) - 
