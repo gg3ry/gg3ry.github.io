@@ -29,6 +29,11 @@ td {
 }
 .mpt:hover {
     background-color: rgba(0, 0, 0, 0);
+    text-shadow: none;
+    color: var(--text-secondary);
+}
+.mpt {
+    text-align: center;
 }
 #hidden {
     display: none;
