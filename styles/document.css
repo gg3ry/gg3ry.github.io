@@ -3,6 +3,9 @@ iframe {
 }
 #docx {
     display: none;
+    width: 36%;
+    height: 100%;
+    margin: auto auto;
 }
 #pdf {
     display: none;
