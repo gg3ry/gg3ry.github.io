@@ -3,6 +3,9 @@
 html, body, main {
     font-family: 'Tilt Neon', sans-serif;
 }
+#letter { 
+    display: block;
+}
 #doc {
     color: var(--text-primary);
     display: none;
@@ -11,6 +14,9 @@ html, body, main {
     background-color: rgba(255, 174, 0, 0.1);
     border-radius: 12px;
     border: 3px solid rgba(255, 255, 255, 0.25);
+}
+#doc::selection {
+    background-color: #dd8c12;
 }
 .gap {
     height: 40px;
