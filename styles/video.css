@@ -18,7 +18,7 @@ section video{
 section .navigation{
 	position: absolute;
 	padding: 1px;
-	bottom: 5%;
+	bottom: 0.5%;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 100;
@@ -28,21 +28,46 @@ section .navigation{
 	height: 100px;
 	width: 150px;
 }
-
 section .navigation li{
 	list-style: none;
 	cursor: var(--cursor-active), pointer;
 	border-radius: 4px;
 	margin: 1px;
 	border: 1px solid #fff;
-	opacity: 0.7;
+	opacity: 0.5;
 }
-
-section .navigation li img{
+.pli {
+	border: none;
+	opacity: 1;
+}
+section .navigation li img, .pp svg{
 	transition: 0.5s;
 }
 section .navigation li img:hover{
 	height: 150px;
 	width: 200px;
 	border: 2px solid #fff;
+}
+.pp svg {
+	width: 100px;
+	height: 100px;
+}
+.pp {
+	background-color: #ffffff00;
+	border: none;
+}
+#play {
+	display: block;
+}
+#pause {
+	display: none;
+}
+#high {
+	display: block;
+}
+#muted {
+	display: none;
+}
+#medium {
+	display: none;
 }
