@@ -1,7 +1,7 @@
 function pdf() {
     var pdf = document.getElementById("pdf")
     var docx = document.getElementById("docx")
-    if (pdf.style.display === "none") {
+    if (pdf.style.display == "none") {
         pdf.style.display = "block"
         docx.style.display = "none"
     }
@@ -12,7 +12,7 @@ function pdf() {
 function docx() {
     var docx = document.getElementById("docx")
     var pdf = document.getElementById("pdf")
-    if (docx.style.display === "none") {
+    if (docx.style.display == "none") {
         docx.style.display = "block"
         pdf.style.display = "none"
     }
