@@ -7,7 +7,7 @@ table {
     -webkit-backdrop-filter: blur(12px) saturate(200%);
     background-color: rgba(255, 174, 0, 0.3);
 }
-table::selection, td::selection, th::selection {
+th::selection{
     background-color: #dd8c12;
     color: azure;
 }
@@ -18,24 +18,19 @@ th, td {
     font-family: 'Mohave', sans-serif;
 }
 th {
-    text-align: center;
     font-size: larger;
     font-weight: bolder;
+    text-align: center;
 }
 td {
     font-size: 20px;
     font-weight: bold;
     min-width: 16vw;
 }
-.mpt:hover {
-    background-color: rgba(0, 0, 0, 0);
-    text-shadow: none;
-    color: var(--text-secondary);
-}
 .mpt {
     text-align: center;
 }
-#hidden {
+#o {
     display: none;
 }
 th, td, table, tr {
@@ -59,7 +54,7 @@ main, th, td, table {
     outline: none;
     border-radius: 5px;
     z-index: 0;
-    background: var(--bg-primary);
+    background: #000;
     overflow: hidden;
     border: 2px solid #00ff91;
     color: #00ff91;
@@ -95,6 +90,7 @@ cursor: var(--cursor-active), pointer;
 }
 .tanar {
     display: none;
+    background-color: #0000006c;
 }
 td:hover .terem {
     display: inline;
@@ -110,24 +106,33 @@ td:active .terem, td:active .ora {
 }
 td:active .tanar {
     display: inline;
-    background-color: black;
+    
+}
+td:hover  {
+    color: rgba(255, 255, 255, 0.5);
+    background-color: #0000006c;
+    text-shadow:
+      0 0 7px #ff0800,
+      0 0 10px #ff0800,
+      0 0 21px #ff0800,
+      0 0 42px #ff0800,
+      0 0 82px #ff0800,
+      0 0 92px #ff0800,
+      0 0 102px #ff0800,
+      0 0 151px #ff0800;
+      text-align: center;
+}
+td:active {
+    text-align: right;
     color: rgba(255, 255, 255, 0.5);
     text-shadow: 
-    3px 3px 20px #00ff15,
-    -2px 1px 30px #00ff15;
+    3px 3px 20px #e5ff00,
+    -2px 1px 30px #e5ff00;
 }
-    
-td:hover {
+th:hover {
     color: rgba(255, 255, 255, 0.5);
-    background-color: #000000;
-    text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #ffee00,
-      0 0 82px #ffee00,
-      0 0 92px #ffee00,
-      0 0 102px #ffee00,
-      0 0 151px #ffee00;
-      text-align: center;
+    text-shadow: 
+    3px 3px 20px #e5ff00,
+    -2px 1px 30px #e5ff00;
+    background-color: #0000006c;
 }
