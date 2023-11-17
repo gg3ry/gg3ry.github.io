@@ -36,7 +36,7 @@ function vol() {
         v = 0;
         vid.volume = 0;
     }
-    else if (y==0) {
+    else if (v==0) {
         muted.style.display = 'none';
         medium.style.display = 'block';
         v = 1;
