@@ -49,3 +49,23 @@ function vol() {
         vid.volume = 1;
     }
 }
+function fs() {
+    vid = document.getElementById('video');
+    if (vid.requestFullscreen) {
+        vid.requestFullscreen();
+      } else if (vid.webkitRequestFullscreen) {
+        vi.webkitRequestFullscreen();
+      } else if (vid.msRequestFullscreen) {
+        vid.msRequestFullscreen();
+      }
+}
+const vi = document.getElementById("video");
+vi.addEventListener("dblclick", () => {
+    if (vi.requestFullscreen) {
+        vi.requestFullscreen();
+      } else if (vi.webkitRequestFullscreen) {
+        vi.webkitRequestFullscreen();
+      } else if (vi.msRequestFullscreen) {
+        vi.msRequestFullscreen();
+      }
+});
