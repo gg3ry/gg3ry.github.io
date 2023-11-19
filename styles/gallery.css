@@ -20,7 +20,21 @@ main {
   display:inline-flex;
   margin: 2rem
 }
-
+#muted {
+  display: none;
+}
+#high {
+  display: block;
+}
+#muted, #high {
+  width: 100px;
+  height: 100px;
+}
+.btn {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  float: right;
+}
 .card-inner {
   position: relative;
   width: 100%;
