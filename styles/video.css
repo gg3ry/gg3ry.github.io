@@ -4,7 +4,6 @@
 	box-sizing: border-box;
 }
 section{
-	position: relative;
 	width: auto;
 	height: 100vh;
 }
@@ -18,7 +17,7 @@ section video{
 section .navigation{
 	position: absolute;
 	padding: 1px;
-	bottom: 0.5%;
+	bottom: 1%;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 100;
