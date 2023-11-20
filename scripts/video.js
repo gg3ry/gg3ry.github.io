@@ -59,13 +59,3 @@ function fs() {
         vid.msRequestFullscreen();
       }
 }
-const vi = document.getElementById("video");
-vi.addEventListener("dblclick", () => {
-    if (vi.requestFullscreen) {
-        vi.requestFullscreen();
-      } else if (vi.webkitRequestFullscreen) {
-        vi.webkitRequestFullscreen();
-      } else if (vi.msRequestFullscreen) {
-        vi.msRequestFullscreen();
-      }
-});
