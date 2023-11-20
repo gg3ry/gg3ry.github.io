@@ -33,17 +33,20 @@ function vol() {
     if (v==2) {
         high.style.display = 'none';
         muted.style.display = 'block';
+        medium.style.display = 'none';
         v = 0;
         vid.volume = 0;
     }
     else if (v==0) {
         muted.style.display = 'none';
+        high.style.display = 'none'
         medium.style.display = 'block';
         v = 1;
-        vid.volume = 0.5;
+        vid.volume = 0.3;
     }
     else {
         medium.style.display = 'none';
+        muted.style.display = 'none';
         high.style.display = 'block';
         v = 2;
         vid.volume = 1;
@@ -59,3 +62,78 @@ function fs() {
         vid.msRequestFullscreen();
       }
 }
+let a = 2;
+function billentyu(k) {
+    vid = document.getElementById('video');
+    high = document.getElementById('high');
+    muted = document.getElementById('muted');
+    medium = document.getElementById('medium');
+    if (k.code === 'KeyM') {
+        if (v != 0) {
+            a = v
+            v=0; 
+            vid.volume = 0;
+            muted.style.display = 'block';
+            high.style.display = 'none';
+            medium.style.display = 'none';
+        }
+        else if (a == 1) {
+        v = a;
+        vid.volume = 0.3;
+        muted.style.display = 'none'
+        high.style.display = 'none';
+        medium.style.display = 'block';
+        }
+        else if (a == 2) { 
+            v = a;
+            vid.volume = 1;
+            high.style.display = 'block';
+            muted.style.display = 'none';
+            medium.style.display = 'none';
+        }
+    }
+    else if (k.code === 'Space' || k.key === ' ') {
+        pl();
+    }
+    else if (k.code === 'ArrowDown') {
+        if (v==2) {
+            v = 1;
+            vid.volume = 0.3;
+            high.style.display = 'none';
+            medium.style.display = 'block';
+        }
+        else if (v==1) {
+            v = 0;
+            vid.volume = 0;
+            medium.style.display = 'none'
+            muted.style.display = 'block'
+            high.style.display = 'none'
+        }
+    }
+    else if (k.code === 'ArrowUp') {
+        if (v==0) {
+            v = 1;
+            vid.volume = 0.3;
+            high.style.display = 'none';
+            muted.style.display = 'none';
+            medium.style.display = 'block';
+        }
+        else if (v==1) {
+            v = 2;
+            vid.volume = 1;
+            high.style.display = 'block';
+            muted.style.display = 'none';
+            medium.style.display = 'none';
+        }
+    }
+    else if (k.code === 'ArrowRight') {
+        vid.currentTime += 5;
+    }
+    else if (k.code === 'ArrowLeft') {
+        vid.currentTime -= 5;
+    }
+    
+}
+document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('keydown', billentyu);
+});
