@@ -61,3 +61,12 @@ html, body {
     cursor: url("/src/cursors/cursor_white.png"), default;
     cursor: url("/src/cursors/cursor_white.png"), auto;
 }
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+.animate-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
