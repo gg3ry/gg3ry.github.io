@@ -243,3 +243,13 @@ html, body, nav, main, div{
 a:active {
   cursor: var(--cursor-click), pointer;
 }
+
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+.animate-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
