@@ -1,5 +1,7 @@
 body {
     background-color: #000;
+    cursor: url('/src/cursors/cursor_white.png'), auto;
+    height: 95vh;
 }
 *, *:before, *:after {
     box-sizing: border-box;
@@ -319,7 +321,9 @@ body {
   .center {
     text-align: center;
   }
-  
+  #MonValley:hover {
+    cursor: url('/src/cursors/cursor_active_white.png'), pointer;
+  }
   #MonValley #BrightDoor {
     transition: all 0.3s ease-in-out;
     opacity: 0;
