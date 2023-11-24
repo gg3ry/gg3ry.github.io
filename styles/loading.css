@@ -2,6 +2,7 @@ body {
     background-color: #000;
     cursor: url('/src/cursors/cursor_white.png'), auto;
     height: 95vh;
+    transition: all 2s;
 }
 *, *:before, *:after {
     box-sizing: border-box;
