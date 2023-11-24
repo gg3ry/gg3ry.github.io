@@ -7,7 +7,7 @@ table {
     -webkit-backdrop-filter: blur(12px) saturate(200%);
     background-color: rgba(255, 174, 0, 0.3);
 }
-th::selection{
+th::selection, td::selection, .tanar::selection, .terem::selection,  .ora::selection, .mpt::selection{
     background-color: #dd8c12;
     color: azure;
 }
@@ -48,7 +48,7 @@ main, th, td, table {
     font-weight: bold;
     cursor: var(--cursor-def), default;
     cursor: var(--cursor-def), auto;
-    transition: all 0.5s ease;
+    transition: all 0.5s ease-in;
     position: relative;
     display: inline-block;
     outline: none;
