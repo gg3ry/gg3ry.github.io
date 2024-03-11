@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Könyv kölcsönzés</title>
+</head>
+<body>
+  <h1>Könyv kölcsönzés</h1>
+  <div id="olvaso-info"></div>
+
+  <script>
+    // Olvaso osztály létrehozása
+    class Olvaso {
+      constructor(nev, email) {
+        this.nev = nev;
+        this.email = email;
+        this.konyv = null; // Kezdetben nincs kölcsönzött könyv
+        this.egyenleg = 0; // Kezdetben az egyenleg nulla
+      }
+
+      kolcsonoz(konyv) {
+        this.konyv = konyv;
+        konyv.olvaso = this;
+        konyv.kolcsonozve = true;
+      }
+
+      visszahoz(konyv) {
+        this.konyv = null;
+        konyv.olvaso = null;
+        konyv.kolcsonozve = false;
+      }
+    }
+
+    // Konyv osztály létrehozása
+    class Konyv {
+      constructor(cim, szerzo, isbn, kiadasEve) {
+        this.cim = cim;
+        this.szerzo = szerzo;
+        this.isbn = isbn;
+        this.kiadasEve = kiadasEve;
+        this.olvaso = null; // Kezdetben nincs olvasóhoz rendelve
+        this.lejar = null; // Kezdetben nincs lejárati dátum
+        this.kolcsonozve = false; // Kezdetben nem kölcsönözve
+      }
+
+      set kolcsonozve(kikolcsonozve) {
+        this.kolcsonozve = kikolcsonozve;
+        if (kikolcsonozve) {
+          let currentDate = new Date();
+          currentDate.setDate(currentDate.getDate() + 14); // Kölcsönzés határideje 14 nap
+          this.lejar = currentDate; // Határidő beállítása
+        } else {
+          this.lejar = null; // Lejárati dátum törlése
+        }
+      }
+
+      get kolcsonozve() {
+        return this.kolcsonozve;
+      }
+    }
+
+    // Olvasó létrehozása
+    let olvaso1 = new Olvaso("Teszt Elek", "teszt@pelda.hu");
+
+    // Könyv létrehozása
+    let konyv1 = new Konyv("Almafa", "Teszt Szerző", "1234567890", 2020);
+
+    // Könyv kölcsönzése
+    olvaso1.kolcsonoz(konyv1);
+
+    // Visszahozott könyv
+    olvaso1.visszahoz(konyv1);
+
+    // Olvasó adatainak megjelenítése
+    document.getElementById("olvaso-info").innerText = "Olvasó neve: " + olvaso1.nev + ", E-mail címe: " + olvaso1.email;
+  </script>
+</body>
+</html>
