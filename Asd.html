@@ -1,79 +1,119 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Könyv kölcsönzés</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Könyvtár példányosítása</title>
 </head>
 <body>
-  <h1>Könyv kölcsönzés</h1>
-  <div id="olvaso-info"></div>
+    <script>
+        // Olvasó osztály létrehozása
+        class Olvaso {
+            constructor(nev, email) {
+                this.nev = nev; // Olvasó neve
+                this.email = email; // Olvasó e-mail címe
+                this.konyv = null; // Az olvasó által kölcsönzött könyv
+                this.ejegyenleg = 0; // Kezdeti egyenleg (késedelmi díj)
+            }
 
-  <script>
-    // Olvaso osztály létrehozása
-    class Olvaso {
-      constructor(nev, email) {
-        this.nev = nev;
-        this.email = email;
-        this.konyv = null; // Kezdetben nincs kölcsönzött könyv
-        this.egyenleg = 0; // Kezdetben az egyenleg nulla
-      }
+            kolcsonoz(konyv) {
+                if (this.konyv === null) {
+                    this.konyv = konyv;
+                    konyv.olvaso = this;
+                    konyv.kolcsonozve = true;
+                } else {
+                    console.log("Az olvasó már rendelkezik kölcsönzött könyvvel.");
+                }
+            }
 
-      kolcsonoz(konyv) {
-        this.konyv = konyv;
-        konyv.olvaso = this;
-        konyv.kolcsonozve = true;
-      }
-
-      visszahoz(konyv) {
-        this.konyv = null;
-        konyv.olvaso = null;
-        konyv.kolcsonozve = false;
-      }
-    }
-
-    // Konyv osztály létrehozása
-    class Konyv {
-      constructor(cim, szerzo, isbn, kiadasEve) {
-        this.cim = cim;
-        this.szerzo = szerzo;
-        this.isbn = isbn;
-        this.kiadasEve = kiadasEve;
-        this.olvaso = null; // Kezdetben nincs olvasóhoz rendelve
-        this.lejar = null; // Kezdetben nincs lejárati dátum
-        this.kolcsonozve = false; // Kezdetben nem kölcsönözve
-      }
-
-      set kolcsonozve(kikolcsonozve) {
-        this.kolcsonozve = kikolcsonozve;
-        if (kikolcsonozve) {
-          let currentDate = new Date();
-          currentDate.setDate(currentDate.getDate() + 14); // Kölcsönzés határideje 14 nap
-          this.lejar = currentDate; // Határidő beállítása
-        } else {
-          this.lejar = null; // Lejárati dátum törlése
+            visszahoz(konyv) {
+                if (this.konyv === konyv) {
+                    this.konyv = null;
+                    konyv.olvaso = null;
+                    konyv.kolcsonozve = false;
+                } else {
+                    console.log("Az adott könyvet nem kölcsönözte ki az olvasó.");
+                }
+            }
         }
-      }
 
-      get kolcsonozve() {
-        return this.kolcsonozve;
-      }
-    }
+        // Könyv osztály létrehozása
+        class Konyv {
+            constructor(cim, szerzo, isbn, kiadasEve) {
+                this.cim = cim; // Könyv címe
+                this.szerzo = szerzo; // Könyv szerzője
+                this.isbn = isbn; // Könyv ISBN száma
+                this.kiadasEve = kiadasEve; // Kiadás éve
+                this.olvaso = null; // Az olvasó, aki kölcsönözte a könyvet (kezdetben nincs kölcsönző)
+                this.lejar = null; // Kölcsönzés lejárata
+                this.kolcsonozve = false; // Logikai érték arra vonatkozóan, hogy ki van kölcsönözve a könyv vagy sem
+            }
 
-    // Olvasó létrehozása
-    let olvaso1 = new Olvaso("Teszt Elek", "teszt@pelda.hu");
+            get kolcsonozve() {
+                return this.kolcsonozve;
+            }
 
-    // Könyv létrehozása
-    let konyv1 = new Konyv("Almafa", "Teszt Szerző", "1234567890", 2020);
+            set kolcsonozve(kikolcsonozve) {
+                this.kolcsonozve = kikolcsonozve;
 
-    // Könyv kölcsönzése
-    olvaso1.kolcsonoz(konyv1);
+                if (kikolcsonozve) {
+                    let currentDate = new Date();
+                    this.lejar = new Date(currentDate.setDate(currentDate.getDate() + 14));
+                } else {
+                    this.lejar = null;
+                }
+            }
+        }
 
-    // Visszahozott könyv
-    olvaso1.visszahoz(konyv1);
+        // Konyvtar osztály létrehozása
+        class Konyvtar {
+            constructor() {
+                this.konyvek = []; // Könyveket tartalmazó tömb
+                this.olvasok = []; // Olvasókat tartalmazó tömb
+                this.napiluntetes = 50; // Késedelmi díj napidíja
+            }
 
-    // Olvasó adatainak megjelenítése
-    document.getElementById("olvaso-info").innerText = "Olvasó neve: " + olvaso1.nev + ", E-mail címe: " + olvaso1.email;
-  </script>
+            ujkonyv(konyv) {
+                this.konyvek.push(konyv);
+            }
+
+            ujOlvaso(olvaso) {
+                this.olvasok.push(olvaso);
+            }
+
+            lejartKonyvek() {
+                let currentDate = new Date();
+                let kesettOlvasok = {};
+
+                this.olvasok.forEach((olvaso) => {
+                    if (olvaso.konyv !== null && olvaso.konyv.lejar < currentDate) {
+                        let kulonbseg = Math.abs(currentDate - olvaso.konyv.lejar);
+                        let napok = Math.ceil(kulonbseg / (1000 * 60 * 60 * 24));
+                        let kesesdij = napok * this.napiluntetes;
+                        kesettOlvasok[olvaso.nev] = kesesdij;
+                    }
+                });
+
+                return kesettOlvasok;
+            }
+        }
+
+        // Példányosítás és adatok beállítása
+        let david = new Olvaso("Dávid", "david@gmail.com");
+        let metro = new Konyv("Metró 2033", "Dmitry Glukhovsky", "9789630791397", 2019);
+        let konyvtar = new Konyvtar();
+
+        konyvtar.ujkonyv(metro);
+        konyvtar.ujOlvaso(david);
+
+        david.kolcsonoz(metro);
+
+        let isKolcsonozve = metro.kolcsonozve ? "Kölcsönözve van" : "Nincs kölcsönözve";
+        console.log(isKolcsonozve);
+
+        let lejartKonyvek = konyvtar.lejartKonyvek();
+        console.log(lejartKonyvek);
+        console.log(david);
+    </script>
 </body>
 </html>
