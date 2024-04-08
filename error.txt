@@ -1,0 +1,16 @@
+Failed to load resource: the server responded with a status of 404 (Not Found)
+radius:1 
+        
+        
+       Failed to load resource: the server responded with a status of 400 (Bad Request)
+index.html:29 Error fetching train station data: Error: Network response was not ok
+    at TrainScheduleFetcher.fetchTrainStations (index.html:24:19)
+    at async HTMLInputElement.<anonymous> (index.html:45:20)
+fetchTrainStations @ index.html:29
+radius:1 
+        
+        
+       Failed to load resource: the server responded with a status of 400 (Bad Request)
+index.html:29 Error fetching train station data: Error: Network response was not ok
+    at TrainScheduleFetcher.fetchTrainStations (index.html:24:19)
+    at async HTMLInputElement.<anonymous> (index.html:55:20)
